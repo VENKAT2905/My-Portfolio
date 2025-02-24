@@ -20,7 +20,7 @@ const Header = () => {
 
   const handleBlogClick = (e) => {
     e.preventDefault();
-    window.open('/blog', '_blank');
+    navigate('/blog'); // Changed this line to use navigate instead of window.open
   };
 
   return (
