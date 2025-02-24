@@ -1,9 +1,28 @@
 .footer {
-    background: black;
+    padding: 2rem;
+    background: linear-gradient(135deg, #0a192f 0%, #1a1a2e 100%);
+    position: relative;
     color: #fff;
-    padding: 2rem 4rem;
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 50%, rgba(255, 65, 108, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(255, 75, 43, 0.05) 0%, transparent 50%);
+    filter: blur(5px);
+}
+
+.footer-content {
+    background: rgba(26, 26, 46, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 65, 108, 0.1);
+    padding: 2rem;
 }
 
 .footer p {
@@ -19,6 +38,26 @@
 
 .footer a:hover {
     color: #60a5fa;
+}
+
+.social-links a {
+    color: #FF416C;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #FF4B2B;
+    transform: translateY(-3px);
+}
+
+.footer-text {
+    color: #8892b0;
+}
+
+.footer-text span {
+    background: linear-gradient(90deg, #FF416C, #FF4B2B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 @media (max-width: 768px) {

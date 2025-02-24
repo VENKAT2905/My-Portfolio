@@ -3,7 +3,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background-color: black;
+    background: rgba(10, 25, 47, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--card-border);
     color: #fff;
     position: sticky;
     top: 0;
@@ -14,6 +16,7 @@
     font-weight: bold;
     letter-spacing: 2px;
     padding-left: 5%;
+    color: var(--primary);
 }
 
 .header nav {
@@ -22,15 +25,15 @@
 }
 
 .header a {
-    color: #fff;
+    color: var(--text-secondary);
     margin: 0 15px;
     font-size: 16px;
     font-weight: 500;
-    transition: color 0.3s;
+    transition: var(--transition-standard);
 }
 
 .header a:hover {
-    color: #00bcd4;
+    color: var(--primary);
 }
 
 .social-icons {

@@ -5,7 +5,7 @@ html {
 .skills {
     min-height: 90vh;
     padding: 4rem 2rem;
-    background: black;
+    background: linear-gradient(135deg, #0a192f 0%, #1a1a2e 100%);
     position: relative;
     scroll-margin-top: 80px; /* Matches header height */
     scroll-padding-top: 80px;
@@ -16,11 +16,26 @@ html {
     transition: all 0.5s ease-out;
 }
 
+.skills::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(255, 65, 108, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(255, 75, 43, 0.05) 0%, transparent 50%);
+    filter: blur(5px);
+    pointer-events: none;
+}
+
 .skills h2 {
     text-align: center;
     font-size: 2.8rem;
+    background: linear-gradient(90deg, #FF416C, #FF4B2B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-bottom: 3rem;
-    color: white;
     position: relative;
 }
 
@@ -158,16 +173,18 @@ html {
 }
 
 .skill-item {
-    background: rgba(45, 42, 42, 0.292);
+    background: rgba(26, 26, 46, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 65, 108, 0.1);
+    border-radius: 16px;
     padding: 1.5rem;
-    border-radius: 8px;
     transition: all 0.3s ease;
 }
 
 .skill-item:hover {
     transform: translateY(-5px);
-    border-color: #64ffda;
-    box-shadow: 0 8px 30px rgba(100, 255, 218, 0.1);
+    border-color: #FF416C;
+    box-shadow: 0 15px 35px rgba(255, 65, 108, 0.2);
 }
 
 .skill-info {
@@ -180,13 +197,13 @@ html {
 }
 
 .skill-info h3 {
-    color: #ccd6f6;
+    color: #e6f1ff;
     font-size: 1.2rem;
     text-shadow: 0 0 10px rgba(204, 214, 246, 0.1);
 }
 
 .skill-info span {
-    color: #64ffda;
+    color: #FF416C;
     font-weight: 500;
     font-family: 'Fira Code', monospace;
 }
@@ -196,7 +213,7 @@ html {
 }
 
 .progress-bar {
-    background: rgba(17, 34, 64, 0.9);
+    background: rgba(255, 65, 108, 0.1);
     height: 8px;
     border-radius: 4px;
     overflow: hidden;
@@ -207,14 +224,9 @@ html {
 
 .progress {
     height: 100%;
-    background: linear-gradient(
-        270deg,
-        #64ffda 0%,
-        rgba(100, 255, 218, 0.5) 50%,
-        #64ffda 100%
-    );
+    background: linear-gradient(90deg, #FF416C, #FF4B2B);
     border-radius: 4px;
-    transition: width 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     background-size: 200% 100%;
     animation: shimmer 2s linear infinite;

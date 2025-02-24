@@ -8,7 +8,7 @@ html {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: black;
+    background: var(--gradient-background);
     color: #fff;
     padding: 20px;
     scroll-margin-top: 80px;
@@ -19,6 +19,9 @@ html {
     margin-bottom: 0px;
     text-transform: uppercase;
     letter-spacing: 2px;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .hero p {
@@ -43,4 +46,13 @@ html {
     background-color: gray;
     color: white;
     transform: translateY(-3px);
+}
+
+.hero-cta {
+    display: flex;
+    gap: 1rem;
+}
+
+.hero-cta .button {
+    font-weight: 600;
 }
