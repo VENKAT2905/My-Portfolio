@@ -1,0 +1,50 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: black;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding-left: 5%;
+}
+
+.header nav {
+    display: flex;
+    align-items: center;
+}
+
+.header a {
+    color: #fff;
+    margin: 0 15px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.header a:hover {
+    color: #00bcd4;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+}
+
+.social-icons a {
+    font-size: 18px;
+    margin-left: 10px;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #00bcd4;
+}

@@ -1,0 +1,28 @@
+.footer {
+    background: black;
+    color: #fff;
+    padding: 2rem 4rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer p {
+    color: gray;
+    font-size: 1rem;
+}
+
+.footer a {
+    color: #3b82f6;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #60a5fa;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 1.5rem 2rem;
+    }
+}

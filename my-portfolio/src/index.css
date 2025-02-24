@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  background-size: cover;
+  position: relative;
+  color: #fff;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.85),
+    rgba(0, 0, 0, 0.95)
+  );
+  z-index: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: auto;
+  position: relative;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+.header a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.hero, .about, .projects, .contact {
+  position: relative;
+  z-index: 2;
+  padding: 40px 20px;
+}
+
+.footer {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+}
