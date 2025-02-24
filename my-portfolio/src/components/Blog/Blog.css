@@ -22,17 +22,18 @@
 }
 
 .blog-card {
-    background: rgba(17, 34, 64, 0.7);
-    border-radius: 12px;
+    background: rgba(26, 26, 46, 0.8);
+    border-radius: 16px;
     overflow: hidden;
-    border: 1px solid rgba(100, 255, 218, 0.1);
-    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 65, 108, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(10px);
 }
 
 .blog-card:hover {
-    transform: translateY(-5px);
-    border-color: #64ffda;
-    box-shadow: 0 10px 30px rgba(100, 255, 218, 0.1);
+    transform: translateY(-10px);
+    border-color: #FF416C;
+    box-shadow: 0 15px 35px rgba(255, 65, 108, 0.2);
 }
 
 .blog-image {
@@ -85,9 +86,10 @@
 .blog-meta {
     display: flex;
     justify-content: space-between;
-    color: #64ffda;
+    color: #FF416C;
     font-size: 0.9rem;
-    opacity: 0.8;
+    margin-bottom: 1rem;
+    font-family: 'Fira Code', monospace;
 }
 
 @media (max-width: 768px) {
@@ -103,7 +105,7 @@
 .blog-page {
     min-height: 100vh;
     padding: 2rem;
-    background: radial-gradient(125% 125% at 50% 10%, #0a192f 40%, #112240 100%);
+    background: linear-gradient(135deg, #0a192f 0%, #1a1a2e 100%);
     color: #8892b0;
 }
 
@@ -112,23 +114,38 @@
     padding: 4rem 0;
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+}
+
+.blog-header::after {
+    content: '';
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #FF416C 0%, #FF4B2B 100%);
+    border-radius: 2px;
 }
 
 .blog-header h1 {
-    font-size: 3rem;
-    color: #64ffda;
+    font-size: 3.5rem;
+    background: linear-gradient(90deg, #FF416C, #FF4B2B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-bottom: 1rem;
 }
 
 .blog-header p {
     font-size: 1.2rem;
-    color: #ccd6f6;
+    color: #e6f1ff;
 }
 
 .blog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
@@ -136,7 +153,7 @@
 
 .blog-card-image {
     position: relative;
-    height: 200px;
+    height: 220px;
     overflow: hidden;
 }
 
@@ -144,7 +161,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease;
 }
 
 .blog-card:hover .blog-card-image img {
@@ -155,40 +172,61 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background: rgba(100, 255, 218, 0.9);
-    color: #0a192f;
-    padding: 0.5rem 1rem;
+    background: linear-gradient(90deg, #FF416C, #FF4B2B);
+    color: #fff;
+    padding: 0.5rem 1.2rem;
     border-radius: 20px;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(255, 65, 108, 0.3);
 }
 
 .blog-card-content {
-    padding: 1.5rem;
+    padding: 2rem;
 }
 
 .blog-card-content h2 {
-    color: #ccd6f6;
+    color: #e6f1ff;
     font-size: 1.5rem;
     margin-bottom: 1rem;
     line-height: 1.4;
+    transition: color 0.3s ease;
+}
+
+.blog-card:hover h2 {
+    color: #FF416C;
 }
 
 .blog-card-content p {
+    color: #8892b0;
     margin-bottom: 1.5rem;
     line-height: 1.6;
 }
 
 .read-more {
-    color: #64ffda;
+    color: #FF416C;
     text-decoration: none;
     font-family: 'Fira Code', monospace;
     font-size: 0.9rem;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .read-more:hover {
-    color: #fff;
+    color: #FF4B2B;
+    transform: translateX(5px);
+}
+
+.read-more::after {
+    content: '→';
+    transition: transform 0.3s ease;
+}
+
+.read-more:hover::after {
+    transform: translateX(5px);
 }
 
 @media (max-width: 768px) {
@@ -204,4 +242,10 @@
         grid-template-columns: 1fr;
         padding: 1rem;
     }
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
