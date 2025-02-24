@@ -1,14 +1,17 @@
 import React, { useEffect } from "react";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import About from "./components/About/About";
+import Blog from "./components/Blog/Blog";
+import BlogPost from "./components/Blog/BlogPost";
+import Contact from "./components/Contact/Contact";
+import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
-import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
-import Contact from "./components/Contact/Contact";
 import Skills from "./components/Skills/Skills";
-import Footer from "./components/Footer/Footer";
 import "./styles/global.css";
 
-const App = () => {
+const HomePage = () => {
   useEffect(() => {
     const sections = document.querySelectorAll('section');
     
@@ -30,7 +33,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="app">
+    <>
       <div className="background-overlay" />
       <Header />
       <main className="main-content">
@@ -41,7 +44,19 @@ const App = () => {
         <Contact />
       </main>
       <Footer />
-    </div>
+    </>
+  );
+};
+
+const App = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" element={<BlogPost />} />
+      </Routes>
+    </Router>
   );
 };
 
