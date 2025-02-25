@@ -56,30 +56,33 @@ html {
     padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
-    border: 2px solid #64ffda;
+    border: 2px solid #FF416C;
     border-radius: 15px;
-    background: rgba(6, 6, 6, 0.905);
-    box-shadow: 0 0 30px rgba(100, 255, 218, 0.1);
+    background: rgba(26, 26, 46, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(255, 65, 108, 0.1);
     transition: all 0.3s ease;
 }
 
 .skills-container:hover {
-    box-shadow: 0 0 50px rgba(100, 255, 218, 0.2);
+    box-shadow: 0 0 50px rgba(255, 65, 108, 0.2);
     transform: translateY(-5px);
+    border-color: #FF4B2B;
 }
 
 .skill-card {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(10, 25, 47, 0.7);
     border-radius: 12px;
     padding: 2rem;
     text-align: center;
     transition: transform 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 65, 108, 0.1);
 }
 
 .skill-card:hover {
     transform: translateY(-5px);
-    border-color: #3b82f6;
+    border-color: #FF416C;
+    box-shadow: 0 15px 35px rgba(255, 65, 108, 0.2);
 }
 
 .skill-icon {
